@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Este No Es Tu Hogar</title>
+
+    <!-- Bootstrap CSS & Icons (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="description"
+        content="Educación ambiental sobre especies invasoras en Colombia. Campaña Este No Es Tu Hogar." />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+        <div class="container-xxl">
+            <a class="navbar-brand fw-bold" href="#carrusel">ESTE NO ES TU HOGAR</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+                aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#carrusel">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tarjetas">Especies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#informacion">Más info</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos">Más productos</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-2">
+                    <!-- Botón directo a productos -->
+                    <a class="btn btn-primary rounded-pill" href="#productos" data-scroll>
+                        Más productos
+                    </a>
+                    <!-- Redes -->
+                    <a class="btn btn-outline-secondary btn-sm rounded-pill" href="#" aria-label="Facebook"><i
+                            class="bi bi-facebook"></i></a>
+                    <a class="btn btn-outline-secondary btn-sm rounded-pill" href="#" aria-label="Instagram"><i
+                            class="bi bi-instagram"></i></a>
+                    <a class="btn btn-outline-secondary btn-sm rounded-pill" href="#" aria-label="YouTube"><i
+                            class="bi bi-youtube"></i></a>
+                    <a class="btn btn-outline-secondary btn-sm rounded-pill" href="#" aria-label="Twitter/X"><i
+                            class="bi bi-twitter-x"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!-- CARRUSEL -->
+<section id="carrusel" class="py-4">
+    <div class="container-xxl">
+        <div id="heroCarousel" class="carousel slide carousel-fade reveal" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            </div>
+
+            <div class="carousel-inner rounded-4 shadow">
+                <!-- Slide 1 -->
+                <div class="carousel-item active" data-bs-interval="4500">
+                    <div class="ratio ratio-21x9 bg-cover"
+                        style="background-image:url('Ecosistema.png');">
+                    </div>
+                    <div class="carousel-caption text-start">
+                        <span class="badge bg-success rounded-pill mb-2">Campaña</span>
+                        <h5 class="display-6 fw-bold text-shadow">Protege tu ecosistema</h5>
+                        <p class="lead">Conoce y actúa contra las especies invasoras</p>
+                        <div class="d-flex gap-2">
+                            <a href="#tarjetas" class="btn btn-light rounded-pill">Explorar especies</a>
+                            <a href="#informacion" class="btn btn-outline-light rounded-pill">Más info</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item" data-bs-interval="4500">
+                    <div class="ratio ratio-21x9 bg-cover"
+                        style="background-image:url('Educacion.jpg');">
+                    </div>
+                    <div class="carousel-caption text-start">
+                        <span class="badge bg-success rounded-pill mb-2">Campaña</span>
+                        <h5 class="display-6 fw-bold text-shadow">Educación ambiental</h5>
+                        <p class="lead">Aprende jugando y comparte en familia</p>
+                        <div class="d-flex gap-2">
+                            <a href="#tarjetas" class="btn btn-light rounded-pill">Explorar especies</a>
+                            <a href="#informacion" class="btn btn-outline-light rounded-pill">Más info</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item" data-bs-interval="4500">
+                    <div class="ratio ratio-21x9 bg-cover"
+                        style="background-image:url('Observa.jpg');">
+                    </div>
+                    <div class="carousel-caption text-start">
+                        <span class="badge bg-success rounded-pill mb-2">Campaña</span>
+                        <h5 class="display-6 fw-bold text-shadow">Observa y reporta</h5>
+                        <p class="lead">Tu mirada puede salvar hábitats</p>
+                        <div class="d-flex gap-2">
+                            <a href="#tarjetas" class="btn btn-light rounded-pill">Explorar especies</a>
+                            <a href="#informacion" class="btn btn-outline-light rounded-pill">Más info</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="carousel-item" data-bs-interval="4500">
+                    <div class="ratio ratio-21x9 bg-cover"
+                        style="background-image:url('Accion.jpg');">
+                    </div>
+                    <div class="carousel-caption text-start">
+                        <span class="badge bg-success rounded-pill mb-2">Campaña</span>
+                        <h5 class="display-6 fw-bold text-shadow">Acción ciudadana</h5>
+                        <p class="lead">Únete a campañas locales</p>
+                        <div class="d-flex gap-2">
+                            <a href="#tarjetas" class="btn btn-light rounded-pill">Explorar especies</a>
+                            <a href="#informacion" class="btn btn-outline-light rounded-pill">Más info</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="carousel-item" data-bs-interval="4500">
+                    <div class="ratio ratio-21x9 bg-cover"
+                        style="background-image:url('Ciencia.jpg');">
+                    </div>
+                    <div class="carousel-caption text-start">
+                        <span class="badge bg-success rounded-pill mb-2">Campaña</span>
+                        <h5 class="display-6 fw-bold text-shadow">Ciencia y comunidad</h5>
+                        <p class="lead">Construimos soluciones juntos</p>
+                        <div class="d-flex gap-2">
+                            <a href="#tarjetas" class="btn btn-light rounded-pill">Explorar especies</a>
+                            <a href="#informacion" class="btn btn-outline-light rounded-pill">Más info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- TARJETAS -> MINI CARRUSEL NEÓN -->
+    <section id="tarjetas" class="py-5 bg-light border-top">
+        <div class="container-xxl">
+            <div class="d-flex justify-content-between align-items-end mb-3">
+                <div>
+                    <h3 class="fw-bold h2 mb-0">Especies invasoras</h3>
+                    <p class="text-muted mb-0">Desliza para explorar. Toca una tarjeta para ver detalles.</p>
+                </div>
+                <div class="mc-controls d-none d-md-flex gap-2">
+                    <button class="mc-nav btn btn-outline-dark btn-sm rounded-pill" id="mcPrev" aria-label="Anterior">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="mc-nav btn btn-dark btn-sm rounded-pill" id="mcNext" aria-label="Siguiente">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mini-carousel reveal" id="miniCarousel" aria-roledescription="carousel">
+                <div class="mc-track" id="mcTrack" tabindex="0">
+                    <article class="mc-slide">
+    <div class="card mc-card neon-amber h-100 border-0">
+        <img src="caracolito.jpg" alt="Caracol café de jardín" class="card-img-top object-fit-cover" style="height: 220px;">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title h6 mb-0">Caracol café de jardín</h5>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <p class="card-subtitle text-muted fst-italic small">Cornu aspersum</p>
+            <p class="card-text small mt-2 clamp-3">
+                Molusco terrestre que desplaza especies nativas y afecta cultivos y jardines.
+            </p>
+            <a href="#caracol-cafe" class="btn btn-outline-success btn-sm rounded-pill" data-scroll>Ver más</a>
+        </div>
+    </div>
+</article>
+
+<!-- Slide 2 -->
+<article class="mc-slide">
+    <div class="card mc-card neon-sky h-100 border-0">
+        <img src="monjita.jpg" alt="Mojarra tricolor" class="card-img-top object-fit-cover" style="height: 220px;">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title h6 mb-0">Mojarra tricolor</h5>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <p class="card-subtitle text-muted fst-italic small">Cichlasoma trimaculatum</p>
+            <p class="card-text small mt-2 clamp-3">
+                Pez introducido que depreda alevinos nativos y altera redes tróficas.
+            </p>
+            <a href="#mojarra-tricolor" class="btn btn-outline-success btn-sm rounded-pill" data-scroll>Ver más</a>
+        </div>
+    </div>
+</article>
+
+<!-- Slide 3 -->
+<article class="mc-slide">
+    <div class="card mc-card neon-rose h-100 border-0">
+        <img src="cangrejo.jpg" alt="Cangrejo rojo" class="card-img-top object-fit-cover" style="height: 220px;">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title h6 mb-0">Cangrejo rojo</h5>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <p class="card-subtitle text-muted fst-italic small">Procambarus clarkii</p>
+            <p class="card-text small mt-2 clamp-3">
+                Crustáceo invasor muy resistente que erosiona riberas y depreda anfibios.
+            </p>
+            <a href="#cangrejo-rojo" class="btn btn-outline-success btn-sm rounded-pill" data-scroll>Ver más</a>
+        </div>
+    </div>
+</article>
+
+<!-- Slide 4 -->
+<article class="mc-slide">
+    <div class="card mc-card neon-lime h-100 border-0">
+        <img src="garzape.jpg" alt="Garza bueyera" class="card-img-top object-fit-cover" style="height: 220px;">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title h6 mb-0">Garza bueyera</h5>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <p class="card-subtitle text-muted fst-italic small">Bubulcus ibis</p>
+            <p class="card-text small mt-2 clamp-3">
+                Ave oportunista que desplaza aves locales en sitios de anidación masiva.
+            </p>
+            <a href="#garza-bueyera" class="btn btn-outline-success btn-sm rounded-pill" data-scroll>Ver más</a>
+        </div>
+    </div>
+</article>
+
+<!-- Slide 5 -->
+<article class="mc-slide">
+    <div class="card mc-card neon-emerald h-100 border-0">
+        <img src="ranatoro.jpg" alt="Rana toro" class="card-img-top object-fit-cover" style="height: 220px;">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title h6 mb-0">Rana toro</h5>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <p class="card-subtitle text-muted fst-italic small">Lithobates catesbeianus</p>
+            <p class="card-text small mt-2 clamp-3">
+                Anuro de gran tamaño que depreda anfibios nativos y transmite enfermedades.
+            </p>
+            <a href="#rana-toro" class="btn btn-outline-success btn-sm rounded-pill" data-scroll>Ver más</a>
+        </div>
+    </div>
+</article>
+
+                <!-- Dots -->
+                <ol class="mc-dots" id="mcDots" role="tablist" aria-label="Paginación del carrusel"></ol>
+
+                <!-- Controles móviles -->
+                <div class="mc-controls d-md-none justify-content-center gap-2 mt-3">
+                    <button class="mc-nav btn btn-outline-dark btn-sm rounded-pill" id="mcPrevMob"
+                        aria-label="Anterior">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="mc-nav btn btn-dark btn-sm rounded-pill" id="mcNextMob" aria-label="Siguiente">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETALLE POR ESPECIE -->
+<section id="informacion" class="py-5">
+    <div class="container-xxl">
+
+        <!-- Caracol café -->
+        <div id="caracol-cafe" class="row g-4 align-items-stretch py-4 border-bottom reveal">
+            <div class="col-md-5">
+                <img src="caracolito.jpg" alt="Caracol café de jardín" class="img-fluid rounded-4 shadow h-100 object-fit-cover" style="object-position: center;">
+            </div>
+            <div class="col-md-7">
+                <div class="card rounded-4 shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Descripción y gestión</h5>
+                        <p class="card-text">Molusco terrestre que desplaza especies nativas y afecta cultivos y jardines.</p>
+                        <div class="accordion" id="acc-caracol">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="head-r-caracol">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#col-r-caracol" aria-expanded="true"
+                                        aria-controls="col-r-caracol">Riesgos principales</button>
+                                </h2>
+                                <div id="col-r-caracol" class="accordion-collapse collapse show"
+                                    aria-labelledby="head-r-caracol" data-bs-parent="#acc-caracol">
+                                    <div class="accordion-body">
+                                        <ul class="mb-0">
+                                            <li>Daño en huertos y jardinería urbana.</li>
+                                            <li>Competencia por recursos con caracoles nativos.</li>
+                                            <li>Puede portar parásitos que afectan fauna doméstica.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="head-a-caracol">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#col-a-caracol"
+                                        aria-expanded="false" aria-controls="col-a-caracol">¿Qué hacer?</button>
+                                </h2>
+                                <div id="col-a-caracol" class="accordion-collapse collapse"
+                                    aria-labelledby="head-a-caracol" data-bs-parent="#acc-caracol">
+                                    <div class="accordion-body">
+                                        <ul class="mb-0">
+                                            <li>No liberar caracoles de mascotas o criaderos.</li>
+                                            <li>Usar barreras físicas y recolección responsable.</li>
+                                            <li>Reportar avistamientos a autoridades ambientales.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- accordion -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mojarra tricolor -->
+        <div id="mojarra-tricolor" class="row g-4 align-items-stretch py-4 border-bottom reveal">
+            <div class="col-md-5">
+                <img src="monjita.jpg" alt="Mojarra tricolor" class="img-fluid rounded-4 shadow h-100 object-fit-cover" style="object-position: center;">
+            </div>
+            <div class="col-md-7">
+                <div class="card rounded-4 shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Descripción y gestión</h5>
+                        <p class="card-text">Pez introducido que depreda alevinos nativos y altera redes tróficas.</p>
+                        <div class="accordion" id="acc-mojarra">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="head-r-mojarra">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#col-r-mojarra">Riesgos principales</button>
+                                </h2>
+                                <div id="col-r-mojarra" class="accordion-collapse collapse show"
+                                    data-bs-parent="#acc-mojarra">
+                                    <div class="accordion-body">
+                                        <ul class="mb-0">
+                                            <li>Depredación de peces nativos y macroinvertebrados.</li>
+                                            <li>Competencia por alimento y hábitat.</li>
+                                            <li>Propagación vía traslados para pesca recreativa.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="head-a-mojarra">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#col-a-mojarra">¿Qué hacer?</button>
+                                </h2>
+                                <div id="col-a-mojarra" class="accordion-collapse collapse"
+                                    data-bs-parent="#acc-mojarra">
+                                    <div class="accordion-body">
+                                        <ul class="mb-0">
+                                            <li>No trasladar ni liberar peces de otras cuencas.</li>
+                                            <li>Participar en monitoreo comunitario.</li>
+                                            <li>Promover siembra de especies nativas.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- accordion -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cangrejo rojo -->
+        <div id="cangrejo-rojo" class="row g-4 align-items-stretch py-4 border-bottom reveal">
+            <div class="col-md-5">
+                <img src="cangrejo.jpg" alt="Cangrejo rojo" class="img-fluid rounded-4 shadow h-100 object-fit-cover" style="object-position: center;">
+            </div>
+            <div class="col-md-7">
+                <div class="card rounded-4 shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Descripción y gestión</h5>
+                        <p class="card-text">Crustáceo invasor muy resistente que erosiona riberas y depreda anfibios.</p>
+                        <div class="accordion" id="acc-cangrejo">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="head-r-cangrejo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#col-r-cangrejo">Riesgos principales</button>
+                                </h2>
+                                <div id="col-r-cangrejo" class="accordion-collapse collapse show"
+                                    data-bs-parent="#acc-cangrejo">
+                                    <div class="accordion-body">
+                                        <ul class="mb-0">
+                                            <li>Daño a diques y riberas por madrigueras.</li>
+                                            <li>Transmisión de patógenos a cangrejos nativos.</li>
+                                            <li>Impacto en cultivos de arroz y humedales.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="head-a-cangrejo">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#col-a-cangrejo">¿Qué hacer?</button>
+                                </h2>
+                                <div id="col-a-cangrejo" class="accordion-collapse collapse"
+                                    data-bs-parent="#acc-cangrejo">
+                                    <div class="accordion-body">
+                                        <ul class="mb-0">
+                                            <li>Evitar su comercialización como mascota o carnada.</li>
+                                            <li>No reubicar; avisar a autoridad ambiental.</li>
+                                            <li>Apoyar trampas autorizadas en control focalizado.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- accordion -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Garza bueyera -->
+        <div id="garza-bueyera" class="row g-4 align-items-stretch py-4 border-bottom reveal">
+            <div class="col-md-5">
+                <img src="garzape.jpg" alt="Garza bueyera" class="img-fluid rounded-4 shadow h-100 object-fit-cover" style="object-position: center;">
+            </div>
+            <div class="col-md-7">
+                <div class="card rounded-4 shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Descripción y gestión</h5>
+                        <p class="card-text">Ave oportunista que desplaza aves locales en sitios de anidación masiva.</p>
+                        <div class="accordion" id="acc-garza">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="head-r-garza">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#col-r-garza">Riesgos principales</button>
+                                </h2>
+                                <div id="col-r-garza" class="accordion-collapse collapse show"
+                                    data-bs-parent="#acc-garza">
+                                    <div class="accordion-body">
+                                        <ul class="mb-0">
+                                            <li>Colonias grandes generan residuos y conflictos urbanos.</li>
+                                            <li>Competencia por nidos con aves nativas.</li>
+                                            <li>Puede dispersar semillas de plantas invasoras.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="head-a-garza">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#col-a-garza">¿Qué hacer?</button>
+                                </h2>
+                                <div id="col-a-garza" class="accordion-collapse collapse"
+                                    data-bs-parent="#acc-garza">
+                                    <div class="accordion-body">
+                                        <ul class="mb-0">
+                                            <li>Proteger y restaurar áreas de anidación nativas.</li>
+                                            <li>Evitar alimentar fauna silvestre.</li>
+                                            <li>Reportar colonias urbanas problemáticas.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- accordion -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rana toro -->
+        <div id="rana-toro" class="row g-4 align-items-stretch py-4 border-bottom reveal">
+            <div class="col-md-5">
+                <img src="ranatoro.jpg" alt="Rana toro" class="img-fluid rounded-4 shadow h-100 object-fit-cover" style="object-position: center;">
+            </div>
+            <div class="col-md-7">
+                <div class="card rounded-4 shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Descripción y gestión</h5>
+                        <p class="card-text">Anuro de gran tamaño que depreda anfibios nativos y transmite enfermedades.</p>
+                        <div class="accordion" id="acc-rana">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="head-r-rana">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#col-r-rana">Riesgos principales</button>
+                                </h2>
+                                <div id="col-r-rana" class="accordion-collapse collapse show"
+                                    data-bs-parent="#acc-rana">
+                                    <div class="accordion-body">
+                                        <ul class="mb-0">
+                                            <li>Depredación de renacuajos y pequeños vertebrados.</li>
+                                            <li>Transmisión de quitridio y otros patógenos.</li>
+                                            <li>Colonización rápida de humedales urbanos.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="head-a-rana">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#col-a-rana">¿Qué hacer?</button>
+                                </h2>
+                                <div id="col-a-rana" class="accordion-collapse collapse"
+                                    data-bs-parent="#acc-rana">
+                                    <div class="accordion-body">
+                                        <ul class="mb-0">
+                                            <li>No liberar ejemplares de granja o cautiverio.</li>
+                                            <li>Aplicar bioseguridad en equipos de campo.</li>
+                                            <li>Apoyar monitoreos de cantos para detección temprana.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- accordion -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- MÁS PRODUCTOS -->
+    <section id="productos" class="py-5 bg-white border-top">
+        <div class="container-xxl">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+                <div>
+                    <h3 class="fw-bold h2 mb-1">Más productos</h3>
+                    <p class="text-muted mb-0">Explora nuestro libro y el juego educativo en Roblox.</p>
+                </div>
+            </div>
+
+           <div class="row g-4">
+                <!-- Libro -->
+                <div class="col-12 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm reveal">
+                        <div class="product-thumb bg-cover rounded-top-4"
+                            style="background-image:url('PortadaL.jpg');">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-book me-1"></i> Libro: “Este no es tu hogar”</h5>
+                            <p class="card-text">Edición ilustrada e interactiva para aprender sobre especies invasoras
+                                con Sofía y Santiago.</p>
+                            <a class="btn btn-primary rounded-pill" href="libro.html" target="_blank" rel="noopener">
+                                Ver libro
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+                <!-- Roblox -->
+                <div class="col-12 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm reveal">
+                       <div class="product-thumb bg-cover rounded-top-4"
+                            style="background-image:url('roblo.png');">
+                        </div></div>
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-controller me-1"></i> Juego educativo en Roblox</h5>
+                            <p class="card-text">Recorre hábitats, identifica invasoras y toma decisiones para proteger
+                                el ecosistema.</p>
+                            <a class="btn btn-dark rounded-pill"
+                                href="https://www.roblox.com/share?code=147b2a1a4afb8c4191df6c06424845b2&type=ExperienceDetails&stamp=1761359676015" target="_blank"
+                                rel="noopener">
+                                Jugar en Roblox
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <footer class="border-top bg-white py-5">
+        <div class="container-xxl">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Súmate a la campaña</h5>
+                    <p class="text-muted">Capacítate, participa en monitoreos y comparte información verificada.</p>
+                </div>
+                <div class="col-md-5">
+                    <form class="input-group" id="newsletterForm">
+                        <input class="form-control" placeholder="Tu correo" required type="email" />
+                        <button class="btn btn-success" type="submit">Suscribirme</button>
+                    </form>
+                    <small id="newsletterMsg" class="text-success d-none">¡Gracias por suscribirte!</small>
+                </div>
+                <div class="col-md-3 d-flex justify-content-md-end gap-2">
+                    <a class="btn btn-outline-secondary btn-sm rounded-pill" 
+                    href="https://www.instagram.com/@EsteNoEsTuHogar" 
+                    target="_blank" 
+                    rel="noopener" 
+                    aria-label="Instagram"> 
+                    <i class="bi bi-instagram"></i>
+                    </a>
+                    <a class="btn btn-outline-secondary btn-sm rounded-pill" 
+                    href="https://www.tiktok.com/@bronway03" 
+                    target="_blank" 
+                    rel="noopener" 
+                    aria-label="TikTok">
+                    <i class="bi bi-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="text-center text-muted small mt-4 mb-0">
+                © <span id="year"></span> Este No Es Tu Hogar — Proyecto educativo.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS propio -->
+    <script src="app.js"></script>
+</body>
+
+</html>

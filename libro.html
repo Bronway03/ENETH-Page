@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libro para Colorear</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #eaf8e4, #fff8d6);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #4b7a3c;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #ffffffcc;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 950px;
+      width: 100%;
+    }
+
+    .canvas-container {
+      position: relative;
+      display: inline-block;
+      border: 2px solid #c9e4b4;
+      border-radius: 15px;
+      background: white;
+      margin: 15px 0;
+      overflow: hidden;
+    }
+
+    #drawCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    canvas {
+      border-radius: 15px;
+      display: block;
+    }
+
+    .thumbs img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 5px;
+      border: 2px solid #cde8b0;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .thumbs img:hover {
+      border-color: #6fbf44;
+      transform: scale(1.05);
+    }
+
+    .toolbar input[type="color"] {
+      border: none;
+      background: transparent;
+      width: 45px;
+      height: 45px;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .toolbar input[type="range"] {
+      width: 100px;
+    }
+
+    .btn-green {
+      background-color: #a5d67b;
+      border: none;
+      color: #2f4f1f;
+      font-weight: 500;
+    }
+
+    .btn-green:hover {
+      background-color: #91c56a;
+      color: #1d3512;
+    }
+
+    .btn-yellow {
+      background-color: #f9e27d;
+      border: none;
+      color: #5c4b00;
+      font-weight: 500;
+    }
+
+    .btn-yellow:hover {
+      background-color: #f6d956;
+      color: #3e3200;
+    }
+
+    /* 🔍 Zoom modal */
+    #zoomModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    #zoomModal img {
+      max-width: 90%;
+      max-height: 90%;
+      transition: transform 0.25s ease;
+      cursor: grab;
+    }
+
+    #closeZoom {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* 🌿 Botón final invitación */
+    .invite-btn {
+      margin-top: 30px;
+      font-size: 1.1rem;
+      padding: 12px 30px;
+      border-radius: 12px;
+      background-color: #8ccc65;
+      color: #2b441b;
+      border: none;
+      font-weight: 600;
+      transition: all 0.2s ease-in-out;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .invite-btn:hover {
+      background-color: #77b956;
+      color: #1f3212;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card text-center">
+    <div class="text-start mb-3">
+      <a href="index.html" class="btn btn-green">⬅ Volver al inicio</a>
+    </div>
+
+    <h1>Este No es tu Hogar</h1>
+
+    <div class="toolbar mb-3 d-flex flex-wrap justify-content-center align-items-center gap-3">
+      <div class="d-flex align-items-center gap-2">
+        <label class="fw-semibold text-success">Color:</label>
+        <input type="color" id="colorPicker" value="#000000">
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <label class="fw-semibold text-success">Tamaño:</label>
+        <input type="range" id="brushSize" min="1" max="40" value="5">
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <label class="fw-semibold text-success">Opacidad:</label>
+        <input type="range" id="opacity" min="0.1" max="1" step="0.05" value="1">
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <label class="fw-semibold text-success">Pincel:</label>
+        <select id="brushType" class="form-select form-select-sm" style="width: 150px;">
+          <option value="normal">Pincel normal</option>
+          <option value="marcador">Marcador</option>
+          <option value="pincel">Pincel suave</option>
+          <option value="lapiz">Lápiz</option>
+        </select>
+      </div>
+
+      <button id="eraserBtn" class="btn btn-yellow">🧽 Borrador</button>
+      <button id="clearBtn" class="btn btn-green">🧼 Limpiar</button>
+      <button id="saveBtn" class="btn btn-green">💾 Guardar</button>
+    </div>
+
+    <div class="canvas-container" id="canvasContainer">
+      <canvas id="baseCanvas" width="800" height="600"></canvas>
+      <canvas id="drawCanvas" width="800" height="600"></canvas>
+    </div>
+
+    <div class="thumbs mt-3 d-flex flex-wrap justify-content-center">
+      <img src="Libro-01.jpg" alt="Página 1" onclick="setImage(this)">
+      <img src="Libro-02.jpg" alt="Página 2" onclick="setImage(this)">
+      <img src="Libro-03.jpg" alt="Página 3" onclick="setImage(this)">
+      <img src="Libro-04.jpg" alt="Página 4" onclick="setImage(this)">
+      <img src="Libro-05.jpg" alt="Página 4" onclick="setImage(this)">
+    </div>
+
+    <!-- 🌿 Botón de invitación -->
+    <div class="text-center">
+      <a href="libro-completo.html" class="invite-btn">📖 ¡Prueba el libro completo aquí!</a>
+    </div>
+
+  </div>
+
+  <!-- 🔍 Modal Zoom -->
+  <div id="zoomModal">
+    <span id="closeZoom">❌</span>
+    <img id="zoomImage" src="" alt="Zoom Imagen">
+  </div>
+
+<script>
+  const baseCanvas = document.getElementById("baseCanvas");
+  const drawCanvas = document.getElementById("drawCanvas");
+  const baseCtx = baseCanvas.getContext("2d");
+  const drawCtx = drawCanvas.getContext("2d");
+
+  const colorPicker = document.getElementById("colorPicker");
+  const brushSize = document.getElementById("brushSize");
+  const opacitySlider = document.getElementById("opacity");
+  const eraserBtn = document.getElementById("eraserBtn");
+  const clearBtn = document.getElementById("clearBtn");
+  const saveBtn = document.getElementById("saveBtn");
+  const brushType = document.getElementById("brushType");
+
+  let painting = false;
+  let erasing = false;
+  let currentColor = colorPicker.value;
+  let currentSize = brushSize.value;
+  let currentOpacity = opacitySlider.value;
+  let currentBrush = brushType.value;
+  let currentImage = null;
+
+  function setImage(img) {
+    currentImage = img;
+    baseCtx.clearRect(0, 0, baseCanvas.width, baseCanvas.height);
+    drawCtx.clearRect(0, 0, drawCanvas.width, drawCanvas.height);
+
+    const ratio = Math.min(
+      baseCanvas.width / img.naturalWidth,
+      baseCanvas.height / img.naturalHeight
+    );
+    const x = (baseCanvas.width - img.naturalWidth * ratio) / 2;
+    const y = (baseCanvas.height - img.naturalHeight * ratio) / 2;
+    baseCtx.drawImage(img, x, y, img.naturalWidth * ratio, img.naturalHeight * ratio);
+  }
+
+  drawCanvas.addEventListener("mousedown", startDraw);
+  drawCanvas.addEventListener("mouseup", endDraw);
+  drawCanvas.addEventListener("mousemove", draw);
+  drawCanvas.addEventListener("mouseleave", endDraw);
+  drawCanvas.addEventListener("touchstart", (e) => startDraw(e.touches[0]));
+  drawCanvas.addEventListener("touchend", endDraw);
+  drawCanvas.addEventListener("touchmove", (e) => draw(e.touches[0]));
+
+  function startDraw(e) {
+    painting = true;
+    drawCtx.beginPath();
+    drawCtx.moveTo(getX(e), getY(e));
+  }
+
+  function endDraw() {
+    painting = false;
+    drawCtx.closePath();
+  }
+
+  function draw(e) {
+    if (!painting) return;
+
+    drawCtx.save();
+    drawCtx.globalCompositeOperation = erasing ? "destination-out" : "source-over";
+    drawCtx.lineCap = "round";
+    drawCtx.lineJoin = "round";
+
+    const rgb = hexToRgb(currentColor);
+    let strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${currentOpacity})`;
+    let lineWidth = currentSize;
+    let shadowBlur = 0;
+
+    switch (currentBrush) {
+      case "marcador":
+        shadowBlur = 10;
+        strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${currentOpacity * 0.5})`;
+        break;
+      case "pincel":
+        shadowBlur = 20;
+        strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${currentOpacity * 0.7})`;
+        break;
+      case "lapiz":
+        strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${currentOpacity * 0.4})`;
+        lineWidth = currentSize * 0.6;
+        break;
+    }
+
+    drawCtx.shadowColor = strokeStyle;
+    drawCtx.shadowBlur = shadowBlur;
+    drawCtx.lineWidth = lineWidth;
+    drawCtx.strokeStyle = strokeStyle;
+
+    drawCtx.globalAlpha = 1.0;
+    drawCtx.beginPath();
+    drawCtx.moveTo(getX(e), getY(e));
+    drawCtx.lineTo(getX(e), getY(e));
+    drawCtx.stroke();
+    drawCtx.restore();
+  }
+
+  function getX(e) {
+    return e.clientX - drawCanvas.getBoundingClientRect().left;
+  }
+  function getY(e) {
+    return e.clientY - drawCanvas.getBoundingClientRect().top;
+  }
+
+  function hexToRgb(hex) {
+    const bigint = parseInt(hex.slice(1), 16);
+    const r = (bigint >> 16) & 255;
+    const g = (bigint >> 8) & 255;
+    const b = bigint & 255;
+    return { r, g, b };
+  }
+
+  colorPicker.oninput = () => (currentColor = colorPicker.value);
+  brushSize.oninput = () => (currentSize = brushSize.value);
+  opacitySlider.oninput = () => (currentOpacity = opacitySlider.value);
+  brushType.oninput = () => (currentBrush = brushType.value);
+  eraserBtn.onclick = () => (erasing = !erasing);
+  clearBtn.onclick = () => drawCtx.clearRect(0, 0, drawCanvas.width, drawCanvas.height);
+
+  saveBtn.onclick = () => {
+    const merged = document.createElement("canvas");
+    merged.width = baseCanvas.width;
+    merged.height = baseCanvas.height;
+    const mergedCtx = merged.getContext("2d");
+    mergedCtx.drawImage(baseCanvas, 0, 0);
+    mergedCtx.drawImage(drawCanvas, 0, 0);
+    const link = document.createElement("a");
+    link.download = "mi_coloreo.png";
+    link.href = merged.toDataURL();
+    link.click();
+  };
+</script>
+</body>
+</html>
