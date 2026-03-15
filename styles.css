@@ -13,7 +13,7 @@ body::before{
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(224, 227, 222, 0.744); /* controla la opacidad aquí */
+  background: rgba(75, 72, 72, 0.744); /* controla la opacidad aquí */
   pointer-events: none;
   z-index: -1;
 }
@@ -173,11 +173,11 @@ a.btn.rounded-pill:focus {
 }
 
 .bg-white{
-  background-color: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(44, 52, 41, 0.95) !important;
 }
 
 .bg-light{
-  background-color: rgba(215, 236, 211, 0.95) !important;
+  background-color: rgba(68, 79, 66, 0.95) !important;
 }
 
 /* Mejor feeling en pantallas pequeñas */
